@@ -1,0 +1,10 @@
+{{define "confirm-dialog"}}
+<dialog id="{{.ID}}" class="ds-dialog">
+  <h2>{{.Title}}</h2>
+  <p>{{.Message}}</p>
+  <form method="dialog" class="ds-dialog-actions">
+    <button value="cancel" class="btn btn-secondary">Cancel</button>
+    <button value="confirm" class="btn btn-danger">{{.ConfirmLabel}}</button>
+  </form>
+</dialog>
+{{end}}

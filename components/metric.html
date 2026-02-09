@@ -1,0 +1,6 @@
+{{define "metric"}}
+<div class="metric" {{if .ID}}id="{{.ID}}"{{end}}>
+  <span class="metric-value">{{.Value}}</span>
+  <span class="metric-label">{{.Label}}</span>
+</div>
+{{end}}

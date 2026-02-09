@@ -1,0 +1,11 @@
+{{define "pagination"}}
+{{if gt .TotalPages 1}}
+<nav class="pagination">
+  <button class="page-btn" {{if eq .CurrentPage 1}}disabled{{end}} data-page="{{sub .CurrentPage 1}}">Prev</button>
+  {{range .PageNumbers}}
+  <button class="page-btn {{if eq . $.CurrentPage}}active{{end}}" data-page="{{.}}">{{.}}</button>
+  {{end}}
+  <button class="page-btn" {{if eq .CurrentPage .TotalPages}}disabled{{end}} data-page="{{add .CurrentPage 1}}">Next</button>
+</nav>
+{{end}}
+{{end}}

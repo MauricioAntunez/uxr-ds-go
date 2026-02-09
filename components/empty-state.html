@@ -1,0 +1,8 @@
+{{define "empty-state"}}
+<div class="empty-state">
+  <p class="empty-message">{{.Message}}</p>
+  {{if .Action}}
+  <a href="{{.ActionURL}}" class="btn btn-primary">{{.Action}}</a>
+  {{end}}
+</div>
+{{end}}

@@ -1,0 +1,16 @@
+{{define "tabs"}}
+<div class="tabs">
+  <div class="tab-list" role="tablist">
+    {{range $i, $tab := .Tabs}}
+    <button class="tab" role="tab"
+            aria-selected="{{if eq $i 0}}true{{else}}false{{end}}"
+            data-tab="{{.ID}}">{{.Label}}</button>
+    {{end}}
+  </div>
+  {{range $i, $tab := .Tabs}}
+  <div class="tab-panel" role="tabpanel" id="panel-{{.ID}}" {{if ne $i 0}}hidden{{end}}>
+    {{.Content}}
+  </div>
+  {{end}}
+</div>
+{{end}}

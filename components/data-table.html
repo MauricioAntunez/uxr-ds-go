@@ -1,0 +1,14 @@
+{{define "data-table"}}
+<table class="data-table" {{if .ID}}id="{{.ID}}"{{end}}>
+  <thead>
+    <tr>
+      {{range .Columns}}
+      <th {{if .Width}}style="width: {{.Width}}"{{end}}>{{.Label}}</th>
+      {{end}}
+    </tr>
+  </thead>
+  <tbody>
+    {{.Rows}}
+  </tbody>
+</table>
+{{end}}

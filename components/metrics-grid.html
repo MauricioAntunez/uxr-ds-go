@@ -1,0 +1,7 @@
+{{define "metrics-grid"}}
+<div class="metrics-grid" {{if .ID}}id="{{.ID}}"{{end}}>
+  {{range .Metrics}}
+  {{template "metric" .}}
+  {{end}}
+</div>
+{{end}}

@@ -1,0 +1,14 @@
+{{define "card"}}
+<div class="card {{if .Elevated}}card-elevated{{end}} {{.Class}}">
+  {{if .Header}}
+  <div class="card-header">
+    <h2>{{.Header}}</h2>
+    {{if .HeaderAction}}{{.HeaderAction}}{{end}}
+    {{if .HeaderActions}}<div class="card-actions">{{.HeaderActions}}</div>{{end}}
+  </div>
+  {{end}}
+  <div class="card-body">
+    {{if .Content}}{{.Content}}{{else}}{{.Body}}{{end}}
+  </div>
+</div>
+{{end}}
