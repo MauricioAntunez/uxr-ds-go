@@ -3,6 +3,7 @@ package ds
 import (
 	"fmt"
 	"html/template"
+	"maps"
 	"reflect"
 	"strconv"
 	"strings"
@@ -139,12 +140,8 @@ func FuncMap() template.FuncMap {
 // MergeFuncMap creates a new FuncMap from base, overriding/adding entries from extra.
 func MergeFuncMap(base, extra template.FuncMap) template.FuncMap {
 	merged := make(template.FuncMap, len(base)+len(extra))
-	for k, v := range base {
-		merged[k] = v
-	}
-	for k, v := range extra {
-		merged[k] = v
-	}
+	maps.Copy(merged, base)
+	maps.Copy(merged, extra)
 	return merged
 }
 
